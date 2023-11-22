@@ -1,15 +1,19 @@
 import Logo from "./logo.png";
 
-export default function createHome() {
-  const content = document.createElement("div");
+export default class Home {
+  pageName = "Home";
 
-  const heading = document.createElement("h1");
-  heading.textContent = "Welcome!";
-  content.appendChild(heading);
+  static createSubpage() {
+    const content = document.createElement("div");
 
-  const logoImage = new Image();
-  logoImage.src = Logo;
-  content.appendChild(logoImage);
+    const heading = document.createElement("h1");
+    heading.textContent = "Welcome!";
+    content.appendChild(heading);
 
-  return content;
+    const logoImage = new Image();
+    logoImage.src = Logo;
+    content.appendChild(logoImage);
+
+    return content;
+  }
 }

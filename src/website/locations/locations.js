@@ -1,15 +1,19 @@
 import Globe from "./globe.png";
 
-export default function createLocations() {
-  const content = document.createElement("div");
+export default class Locations {
+  pageName = "Locations";
 
-  const heading = document.createElement("h1");
-  heading.textContent = "First, we take Manhattan. Then we take Berlin!";
-  content.appendChild(heading);
+  static createSubpage() {
+    const content = document.createElement("div");
 
-  const globeImage = new Image();
-  globeImage.src = Globe;
-  content.appendChild(globeImage);
+    const heading = document.createElement("h1");
+    heading.textContent = "First, we take Manhattan. Then we take Berlin!";
+    content.appendChild(heading);
 
-  return content;
+    const globeImage = new Image();
+    globeImage.src = Globe;
+    content.appendChild(globeImage);
+
+    return content;
+  }
 }

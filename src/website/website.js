@@ -1,16 +1,16 @@
-import createHome from "./home/home";
-import createMenu from "./menu/menu";
-import createLocations from "./locations/locations";
+import Home from "./home/home";
+import Menu from "./menu/menu";
+import Locations from "./locations/locations";
 
 export default function generateWebsite() {
   const content = document.getElementById("content");
 
   content.appendChild(createHeader());
-  content.appendChild(createNavigation());
+  content.appendChild(createNavigation([Home, Menu, Locations]));
   content.appendChild(createSubpage());
   content.appendChild(createFooter());
 
-  renderSubpage(createHome());
+  renderSubpage(Home);
 }
 
 function createHeader() {
@@ -20,30 +20,18 @@ function createHeader() {
   return header;
 }
 
-function createNavigation() {
+function createNavigation(subpages) {
   const nav = document.createElement("nav");
 
-  const home = document.createElement("div");
-  home.textContent = "Home";
-  home.addEventListener("click", () => {
-    renderSubpage(createHome());
-  });
+  subpages.forEach((subpage) => {
+    const subpageElement = document.createElement("div");
+    subpageElement.textContent = subpage.name;
+    subpageElement.addEventListener("click", () => {
+      renderSubpage(subpage);
+    });
 
-  const menu = document.createElement("div");
-  menu.textContent = "Menu";
-  menu.addEventListener("click", () => {
-    renderSubpage(createMenu());
+    nav.appendChild(subpageElement);
   });
-
-  const locations = document.createElement("div");
-  locations.textContent = "Locations";
-  locations.addEventListener("click", () => {
-    renderSubpage(createLocations());
-  });
-
-  nav.appendChild(home);
-  nav.appendChild(menu);
-  nav.appendChild(locations);
 
   return nav;
 }
@@ -55,10 +43,10 @@ function createSubpage() {
   return subpage;
 }
 
-function renderSubpage(subpageContent) {
+function renderSubpage(subpage) {
   const suppage = document.getElementById("subpage");
   suppage.innerHTML = "";
-  suppage.appendChild(subpageContent);
+  suppage.appendChild(subpage.createSubpage());
 }
 
 function createFooter() {
