@@ -1,3 +1,3 @@
-import generateHome from "./home/home";
+import generateWebsite from "./website/website.js";
 
-generateHome();
+generateWebsite();
