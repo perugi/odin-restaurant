@@ -1,9 +1,9 @@
 import Globe from "./globe.png";
 
-export default class Locations {
-  pageName = "Locations";
+const locations = {
+  pageName: "Locations",
 
-  static createSubpage() {
+  createSubpage: () => {
     const content = document.createElement("div");
 
     const heading = document.createElement("h1");
@@ -15,5 +15,7 @@ export default class Locations {
     content.appendChild(globeImage);
 
     return content;
-  }
-}
+  },
+};
+
+export default locations;

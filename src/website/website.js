@@ -1,16 +1,16 @@
-import Home from "./home/home";
-import Menu from "./menu/menu";
-import Locations from "./locations/locations";
+import home from "./home/home";
+import menu from "./menu/menu";
+import locations from "./locations/locations";
 
 export default function generateWebsite() {
   const content = document.getElementById("content");
 
   content.appendChild(createHeader());
-  content.appendChild(createNavigation([Home, Menu, Locations]));
+  content.appendChild(createNavigation([home, menu, locations]));
   content.appendChild(createSubpage());
   content.appendChild(createFooter());
 
-  renderSubpage(Home);
+  renderSubpage(home);
 }
 
 function createHeader() {
@@ -20,14 +20,14 @@ function createHeader() {
   return header;
 }
 
-function createNavigation(subpages) {
+function createNavigation(subpageObjs) {
   const nav = document.createElement("nav");
 
-  subpages.forEach((subpage) => {
+  subpageObjs.forEach((subpageObj) => {
     const subpageElement = document.createElement("div");
-    subpageElement.textContent = subpage.name;
+    subpageElement.textContent = subpageObj.pageName;
     subpageElement.addEventListener("click", () => {
-      renderSubpage(subpage);
+      renderSubpage(subpageObj);
     });
 
     nav.appendChild(subpageElement);
@@ -43,10 +43,10 @@ function createSubpage() {
   return subpage;
 }
 
-function renderSubpage(subpage) {
-  const suppage = document.getElementById("subpage");
-  suppage.innerHTML = "";
-  suppage.appendChild(subpage.createSubpage());
+function renderSubpage(subpageObj) {
+  const subpage = document.getElementById("subpage");
+  subpage.innerHTML = "";
+  subpage.appendChild(subpageObj.createSubpage());
 }
 
 function createFooter() {

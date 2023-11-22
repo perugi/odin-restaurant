@@ -1,9 +1,9 @@
 import Logo from "./logo.png";
 
-export default class Home {
-  pageName = "Home";
+const home = {
+  pageName: "Home",
 
-  static createSubpage() {
+  createSubpage: () => {
     const content = document.createElement("div");
 
     const heading = document.createElement("h1");
@@ -15,5 +15,7 @@ export default class Home {
     content.appendChild(logoImage);
 
     return content;
-  }
-}
+  },
+};
+
+export default home;
