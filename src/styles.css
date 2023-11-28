@@ -1,12 +1,26 @@
+@font-face {
+  font-family: 'Gotham';
+  src: url('./fonts/Gotham-Bold.otf') format('otf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700;900&display=swap');
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
 }
 
 nav {
     display: flex;
     align-items: center;
     background-color: #0060a8;
-    padding: 35px;
+    padding: 24px 0px; 
 }
 
 .logo {
@@ -27,9 +41,44 @@ nav {
 
 .subpage-links>a {
     color: #fff;
-    margin: 0 10px;
+    padding: 16px 12px 12px;
     text-transform: uppercase;
+    text-decoration-color: #fff;
+    position: relative;
 }
+
+.subpage-links>a:not(:last-child) {
+    margin-right: 4px;
+}
+
+/* .subpage-links>a:hover:before {
+    width: 100%;
+} */
+
+.subpage-links>a:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.2s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.subpage-links>a:hover:before {
+    width: 100%;
+}
+
+.subpage-links>a.active:before {
+    width: 100%;
+}
+
 
 #content {
     height: 100vh;

@@ -34,7 +34,12 @@ function createNavigation(subpageObjs) {
       subpageElement.textContent = subpageObj.pageName;
       subpageLinks.appendChild(subpageElement);
     }
-    subpageElement.addEventListener("click", () => {
+
+    subpageElement.addEventListener("click", (e) => {
+      for (let i = 0; i < subpageLinks.childNodes.length; i++) {
+        subpageLinks.childNodes[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
       renderSubpage(subpageObj);
     });
   });
