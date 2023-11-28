@@ -1,4 +1,4 @@
-import Slider from "./slider.jpg";
+import sliderItems from "./slider_items";
 
 const menu = {
   pageName: "Menu",
@@ -7,12 +7,30 @@ const menu = {
     const content = document.createElement("div");
 
     const heading = document.createElement("h1");
-    heading.textContent = "This is on the menu:";
+    heading.textContent = "Slider experts since 1921";
     content.appendChild(heading);
 
-    const sliderImage = new Image();
-    sliderImage.src = Slider;
-    content.appendChild(sliderImage);
+    const sliderGrid = document.createElement("div");
+    sliderGrid.classList.add("slider-grid");
+    content.appendChild(sliderGrid);
+
+    sliderItems.forEach((slider) => {
+      const sliderCard = document.createElement("div");
+      sliderCard.classList.add("slider-card");
+
+      const sliderImage = document.createElement("img");
+      sliderImage.src = slider.image;
+      console.log(sliderImage);
+      sliderImage.classList.add("slider-image");
+      sliderCard.appendChild(sliderImage);
+
+      const sliderName = document.createElement("div");
+      sliderName.classList.add("slider-name");
+      sliderName.textContent = slider.name;
+      sliderCard.appendChild(sliderName);
+
+      sliderGrid.appendChild(sliderCard);
+    });
 
     return content;
   },
