@@ -18,22 +18,25 @@ export default function generateWebsite() {
 
 function createNavigation(subpageObjs) {
   const nav = document.createElement("nav");
+  const subpageLinks = document.createElement("div");
+  subpageLinks.classList.add("subpage-links");
+  nav.appendChild(subpageLinks);
 
   subpageObjs.forEach((subpageObj) => {
-    const subpageElement = document.createElement("div");
+    const subpageElement = document.createElement("a");
     if (subpageObj.pageName === "Home") {
-      const logoImage = document.createElement("img");
-      logoImage.classList.add("logo");
-      logoImage.src = Logo;
-      subpageElement.appendChild(logoImage);
+      subpageElement.classList.add("logo");
+      const logo = document.createElement("img");
+      logo.src = Logo;
+      subpageElement.appendChild(logo);
+      nav.insertBefore(subpageElement, subpageLinks);
     } else {
       subpageElement.textContent = subpageObj.pageName;
+      subpageLinks.appendChild(subpageElement);
     }
     subpageElement.addEventListener("click", () => {
       renderSubpage(subpageObj);
     });
-
-    nav.appendChild(subpageElement);
   });
 
   return nav;
@@ -50,6 +53,7 @@ function createFooter() {
   const footer = document.createElement("footer");
 
   const ghLink = document.createElement("a");
+  ghLink.id = "gh-link";
   ghLink.href = "https://github.com/perugi/";
 
   const madeBy = document.createElement("div");
@@ -58,6 +62,7 @@ function createFooter() {
 
   const ghLogoImage = document.createElement("img");
   ghLogoImage.src = ghLogo;
+  ghLogoImage.id = "gh-logo";
   ghLink.appendChild(ghLogoImage);
 
   const name = document.createElement("div");
