@@ -5,14 +5,19 @@ const menu = {
 
   createSubpage: () => {
     const content = document.createElement("div");
+    content.classList.add("menu");
 
     const heading = document.createElement("h1");
     heading.textContent = "Slider experts since 1921";
     content.appendChild(heading);
 
+    const sliderBackground = document.createElement("div");
+    sliderBackground.classList.add("slider-background");
+    content.appendChild(sliderBackground);
+
     const sliderGrid = document.createElement("div");
     sliderGrid.classList.add("slider-grid");
-    content.appendChild(sliderGrid);
+    sliderBackground.appendChild(sliderGrid);
 
     sliderItems.forEach((slider) => {
       const sliderCard = document.createElement("div");

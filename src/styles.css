@@ -144,6 +144,56 @@ button:hover, input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.menu>h1 {
+    padding: 50px 0;
+    text-transform: uppercase;
+    color: #0060a8;
+    font-weight: 900;
+    font-size: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider-background {
+    background-color: #f8f8f8;
+    padding: 20px;
+
+}
+
+.slider-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-gap: 20px;
+}
+
+.slider-card {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.slider-card:hover {
+    cursor: pointer;
+    outline: 2px solid rgb(220, 217, 223);
+}
+
+.slider-image {
+    width: auto;
+    height: 160px;
+}
+
+.slider-name {
+    text-transform: uppercase;
+    color: rgb(0, 96, 168);
+    font-weight: 600;
+    letter-spacing: 0;
+    padding: 10px;
+}
+
 .locations {
     background-image: url("./website/locations/whitecastle.png");
     background-position: 50%;
@@ -188,7 +238,7 @@ button:hover, input[type="submit"]:hover {
 }
 
 .locations-form>input[type="text"] {
-    width: 300px;
+    width: 400px;
     padding: 16px;
     border-radius: 4px;
     border: 2px solid rgb(127, 175, 211);
