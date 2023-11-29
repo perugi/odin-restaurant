@@ -5,20 +5,33 @@ const locations = {
 
   createSubpage: () => {
     const content = document.createElement("div");
+    content.classList.add("locations");
 
-    const locationImage = new Image();
-    locationImage.src = Location;
-    content.appendChild(locationImage);
+    const locationsContent = document.createElement("div");
+    locationsContent.classList.add("locations-content");
+    content.appendChild(locationsContent);
 
     const heading = document.createElement("h1");
-    heading.textContent = "The house that Crave built.";
-    content.appendChild(heading);
+    let headingText = document.createElement("span");
+    headingText.textContent = "The house that";
+    heading.appendChild(headingText);
+
+    headingText = document.createElement("span");
+    headingText.textContent = "Crave";
+    heading.appendChild(headingText);
+
+    headingText = document.createElement("span");
+    headingText.textContent = "built";
+    heading.appendChild(headingText);
+
+    locationsContent.appendChild(heading);
 
     const locationForm = document.createElement("form");
     locationForm.addEventListener("submit", (e) => {
       e.preventDefault();
     });
-    content.appendChild(locationForm);
+    locationForm.classList.add("locations-form");
+    locationsContent.appendChild(locationForm);
 
     const locationInput = document.createElement("input");
     locationInput.type = "text";

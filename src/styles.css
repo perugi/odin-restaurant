@@ -103,29 +103,29 @@ footer {
     background-size: cover;
 }
 
-.home-text {
+.home-content {
     justify-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.home-text>h1 {
+.home-content>h1 {
     color:#fff;
     text-transform: uppercase;
     font-size: 64px;
     font-weight: 900;
 }
 
-.home-text>h1:first-child {
+.home-content>h1:first-child {
     font-size: 80px;
 }
 
-.home-text>button {
+.home-content>button {
     margin-top: 20px;;
 }
 
-button {
+button, input[type="submit"] {
     color: #fff;
     background-image: linear-gradient(rgb(242, 105, 36), rgb(196, 85, 29));
     padding: 12px 24px;
@@ -139,11 +139,64 @@ button {
 
 }
 
-button:hover {
+button:hover, input[type="submit"]:hover {
     background-image: linear-gradient(rgb(214, 80, 13), rgb(152, 66, 22));
     cursor: pointer;
 }
 
+.locations {
+    background-image: url("./website/locations/whitecastle.png");
+    background-position: 50%;
+    background-size: cover;
+}
+
+.locations-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 0 75px 0;
+}
+
+.locations-content>h1 {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.locations-content>h1>span:nth-child(1) {
+    font-size: 36px;
+}
+
+.locations-content>h1>span:nth-child(2) {
+    font-size: 95px;
+}
+
+.locations-content>h1>span:nth-child(3) {
+    font-size: 117px;
+}
+
+.locations-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.locations-form>input[type="text"] {
+    width: 300px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 2px solid rgb(127, 175, 211);
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
 
 #gh-link {
     text-decoration: none;
