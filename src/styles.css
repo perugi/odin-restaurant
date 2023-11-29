@@ -144,8 +144,13 @@ button:hover, input[type="submit"]:hover {
     cursor: pointer;
 }
 
+.menu {
+    background-color: #f8f8f8;
+}
+
 .menu>h1 {
-    padding: 50px 0;
+    background-color: #fff;
+    padding: 50px 20px;
     text-transform: uppercase;
     color: #0060a8;
     font-weight: 900;
@@ -156,7 +161,6 @@ button:hover, input[type="submit"]:hover {
 }
 
 .slider-background {
-    background-color: #f8f8f8;
     padding: 20px;
 
 }
