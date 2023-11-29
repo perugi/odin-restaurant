@@ -7,21 +7,31 @@ const home = {
 
   createSubpage: () => {
     const content = document.createElement("div");
+    content.classList.add("home");
 
-    const logoImage = new Image();
-    logoImage.src = Burger;
-    content.appendChild(logoImage);
+    // const logoImage = new Image();
+    // logoImage.src = Burger;
+    // logoImage.classList.add("home-image");
+    // content.appendChild(logoImage);
 
-    const heading = document.createElement("h1");
-    heading.textContent = "Home of the Crave";
-    content.appendChild(heading);
+    const homeText = document.createElement("div");
+    homeText.classList.add("home-text");
+    content.appendChild(homeText);
+
+    const heading1 = document.createElement("h1");
+    heading1.textContent = "Home of";
+    homeText.appendChild(heading1);
+
+    const heading2 = document.createElement("h1");
+    heading2.textContent = "the Crave";
+    homeText.appendChild(heading2);
 
     const menuButton = document.createElement("button");
     menuButton.textContent = "Explore Menu";
     menuButton.addEventListener("click", () => {
       renderSubpage(menu);
     });
-    content.appendChild(menuButton);
+    homeText.appendChild(menuButton);
 
     return content;
   },
